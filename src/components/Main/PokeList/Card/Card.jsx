@@ -39,31 +39,32 @@ const Card = (pokemon) => {
 
   //data.name,data.sprites.front_default,data.moves[0].move,data.moves[1].move,data.id,data.types[0].type,data.weight
   
-  return (<div class="card bg-[#414141] w-80 h-[32rem] rounded-xl p-6 space-y-4">
+  return (<div className="card bg-black/70 w-80 h-[32rem] rounded-xl p-6 space-y-4">
             <a href="#">
-                <img class="w-full h-64 rounded-md transition hover:bg-[#DFDFDF]"
+                <img className="w-full h-64 rounded-md transition hover:bg-[#DFDFDF]"
                     src={pokemon.pokemon.image}
                     alt=""/>
             </a>
-            <div id="description" class="space-y-4">
+            <div id="description" className="space-y-4">
                 <a href="#">
-                    <h2 class="text-white font-semibold text-xl transition hover:text-cyan-300">
+                    <h2 className="text-white font-semibold text-xl transition hover:text-yellow-300">
                         {pokemon.pokemon.name}
                     </h2>
                 </a>
-                <p class="text-slate-500 text-sm select-none">Attacks:
-                 <p>{pokemon.pokemon.firstMove}</p>
-                <p>{pokemon.pokemon.secondMove}</p>
-                </p>
-                <div class="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
-                     <span id="price" class="text-cyan-300 flex justify-between items-center">
+          <div className="flex gap-2 text-slate-500 text-sm select-none items-center">
+            <span className='text-md font-bold'>Attacks: </span>
+              <p>{pokemon.pokemon.firstMove}</p>
+              <p>{pokemon.pokemon.secondMove}</p>
+          </div>
+                <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
+                     <span id="price" className="text-cyan-300 flex justify-between items-center">
                         Type: {pokemon.pokemon.type}
                     </span>
-                    <span class="text-slate-500 flex justify-between items-center select-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
+                    <span className="text-slate-500 flex justify-between items-center select-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd"
                                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                                clip-rule="evenodd" />
+                                clipRule="evenodd" />
                         </svg>
                         ID: {pokemon.pokemon.id}
                     </span>

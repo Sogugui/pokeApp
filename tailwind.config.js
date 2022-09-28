@@ -14,6 +14,10 @@ module.exports = {
         'lucha': '#73a4a4',
         'normal': '#7b5a4a'
       },
+      backgroundImage: {
+        'hero': "url('https://i.pinimg.com/564x/9f/a5/09/9fa509702fab91b910e82919b5408993.jpg')",
+        
+      }
     },
   },
   plugins: [],
