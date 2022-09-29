@@ -44,7 +44,14 @@ const PokeList = () => {
         image: data.sprites.versions['generation-v']['black-white'].animated.front_default, 
         firstMove: data.moves[0].move.name,
         secondMove: data.moves[1].move.name,
-        weight: data.weight
+        thirdMove: data.moves[2].move.name,
+        fourthMove: data.moves[3].move.name,
+        weight: data.weight,
+        height: data.height,
+        experience: data.base_experience,
+        ability1: data.abilities[0].ability.name,
+        ability2: data.abilities[1].ability.name
+
       }
 
         if(!pokemons.map(poke=>poke.name).includes(debouncedText) && !pokemons.map(poke=>poke.id.toString()).includes(debouncedText.trim())){ // condicional para que no se repitan los pokemon ya buscados. Comprobamos por nombre y por id. El id se pasa a string para que no de error la comprobacion y el trim lo pasamos para que no busque al hacer espacio.

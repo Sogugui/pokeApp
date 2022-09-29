@@ -1,16 +1,35 @@
 import React from 'react'
 import { useState  } from 'react'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Card = (pokemon) => {
     const [bg, setBg] = useState('')
+    
     const tipo = pokemon.pokemon.type
+    const id = pokemon.pokemon.id
+    const name = pokemon.pokemon.name
+    const firstMove = pokemon.pokemon.firstMove
+    const secondMove = pokemon.pokemon.secondMove
+    const thirdMove= pokemon.pokemon.thirdMove
+    const fourthMove= pokemon.pokemon.fourthMove
+    const weight= pokemon.pokemon.weight
+    const height = pokemon.pokemon.height
+    const experience= pokemon.pokemon.experience
+    const ability1= pokemon.pokemon.ability1
+    const ability2= pokemon.pokemon.ability2
+
+    
+    // const secondMove = pokemon.pokemon.moves[1].move.name
+    
   
   
   
 
 useEffect(() => {   
-    
+
+    console.log("el objeto pokemon es: ", pokemon)
+
     switch (tipo){
         case "psychic":{ setBg("bg-violet-500/90"); break } //mewtwo
         case "grass":{ setBg("bg-emerald-600/90"); break } // chikorita
@@ -36,16 +55,27 @@ useEffect(() => {
          default:{ break}
     }
 
-
-    
-
 }, [pokemon.pokemon.type, tipo]); 
   
 
   
   
-return (
-   <div className={`card bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-${bg} `}>
+return (<a href={`/pokemon/${id}?
+name=${name}
+&type=${tipo}
+&firstMove=${firstMove}
+&secondMove=${secondMove}
+&thirdMove=${thirdMove}
+&fourthMove=${fourthMove}
+&ability1=${ability1}
+&ability2=${ability2}
+&experience=${experience}
+&weight=${weight}
+&height=${height}
+
+
+
+`} className={`card bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-secondary `}>
         <div className={'rounded-xl'}>
         <div className={` ${bg} bg-${tipo}  rounded-md h-[6rem]`}>
             <div className='flex justify-center h-[17vh] select-none relative overflow-hidden bg-no-repeat bg-cover max-w-xs'>
@@ -54,11 +84,9 @@ return (
                     alt=""/>
             </div>
             <div  className="">
-                <span>
-                    <h2 className="text-black text-center font-semibold text-xl transition hover:text-yellow-300">
+                <h2 className="text-black text-center font-semibold text-xl transition hover:text-yellow-300">
                         {pokemon.pokemon.name}
-                    </h2>
-                </span>
+                </h2>
           <div className="flex gap-2 text-black-100 text-sm select-none items-center">
             <span className='text-md font-bold pl-3'>Attacks: </span>
               <p>{pokemon.pokemon.firstMove}</p>
@@ -80,14 +108,8 @@ return (
                 </div>
                 </div>   
         </div> 
-        </div>  
+        </a>  
  )
 }
 
 export default Card
-
-
-
-//         <div className='h-[25vh] bg-black/70 w-[30vw] rounded-xl'>
-//       <div>aasd</div> 
-//   </div>

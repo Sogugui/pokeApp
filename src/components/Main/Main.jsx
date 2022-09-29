@@ -10,7 +10,7 @@ class Main extends Component {
     return <main>
     <Routes>
       <Route element={<PokeList />} path={"/"} />
-      <Route element={<Form/>} path={"/new"} />
+      <Route element={<Form />} path={"/new"} />
       <Route element={<Details />} path={"/pokemon/:id"} />
       <Route element={<PokeList />} path={"/search"} />
     </Routes>
