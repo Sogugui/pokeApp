@@ -5,7 +5,7 @@ import axios from 'axios';
 import Card from './Card/Card';
 
 const PokeList = () => {
-  const {pokemons, setPokemons} = useContext(pokeContext) //extraccion de estado y funcion globales del context
+  const {pokemons, setPokemons} = useContext(pokeContext) //extraccion de estado y funcion globales del contex
   const [input, setInput] = useState(""); // Para guardar los input
   const [debouncedText] = useDebounce(input, 1000);
   const [error, setError] = useState(false) // para poner mensaje de error cuando se repite el pokemon
@@ -68,7 +68,7 @@ const PokeList = () => {
   }
 
   return (
-    <div className='flex flex-col justify-between app h-screen overflow-auto bg-hero bg-no-repeat'> 
+    <div className='flex flex-col justify-between overflow-auto'> 
       <div className="flex flex-col justify-start items-center gap-4 pt-3">
         <div className='flex flex-col gap-2 items-center'>
           <input placeholder='Search a pokemon...' onChange={(e)=>handlerChange(e)} value={input} type="text"/>
@@ -80,7 +80,7 @@ const PokeList = () => {
         </div>
       </div>
       
-      <div className='flex flex-wrap gap-5 px-2 md:px-24 lg:px-36 justify-center pt-0 h-[80vh] overflow-auto'>
+      <div className=' flex flex-wrap gap-5 px-2 md:px-24 lg:px-36 justify-center pt-5 h-[80vh] overflow-auto'>
         { 
           pokemons.length !== 0 
           ? pokemons.map((poke, index)=> <Card pokemon={poke} key={index} />)  

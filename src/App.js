@@ -17,14 +17,15 @@ const data = {
   setPokemons
 }
 
-  return (<>
+  return (
+  <div className='bg-movil bg-center bg-cover lg:bg-pc bg-no-repeat h-screen'>
     <pokeContext.Provider value={data}>
       <BrowserRouter>
         <Header />
         <Main/>
       </BrowserRouter>
     </pokeContext.Provider>
-    </>
+    </div>
   );
 }
 
