@@ -13,11 +13,12 @@ const PokeList = () => {
 
   //el useEffect consta de 3 partes 1= (args)=>  2={ bloque de instrucciones } 3= [ escucha algo ] array de dependencias 
   useEffect(() => {   
-    const nombre = pokemons.map(poke=>poke.name)
+   
     if( debouncedText.length>0 ){ // condicional para que no haga peticiones si el input esta vacio
       getPokemon()
+      
     }
-    
+    //eslint-disable-next-line
   }, [debouncedText]); //equivale a un componentDidUpdate. 
   
 
@@ -40,13 +41,13 @@ const PokeList = () => {
         id: data.id,
         name: data.name, 
         type: data.types[0].type.name,
-        image: data.sprites.front_default, 
+        image: data.sprites.versions['generation-v']['black-white'].animated.front_default, 
         firstMove: data.moves[0].move.name,
         secondMove: data.moves[1].move.name,
         weight: data.weight
       }
 
-        if(!pokemons.map(poke=>poke.name).includes(debouncedText) ){ // condicional para que no se repitan los pokemon ya buscados
+        if(!pokemons.map(poke=>poke.name).includes(debouncedText) && !pokemons.map(poke=>poke.id.toString()).includes(debouncedText.trim())){ // condicional para que no se repitan los pokemon ya buscados. Comprobamos por nombre y por id. El id se pasa a string para que no de error la comprobacion y el trim lo pasamos para que no busque al hacer espacio.
           setPokemons( [newPokemon,...pokemons] ) //nuevo dato del imput al principio, viejo detras mejor exp User (ux/ui)
         }else{
           handlerError("This pokemon already exists")
@@ -64,7 +65,12 @@ const PokeList = () => {
 
 
   const handlerChange = (e) =>{
-    setInput(e.target.value)
+    if(e.target.value>199){
+      handlerError(`416 - Request range. Unable to fetch pokemon: ${e.target.value}`)
+    }else{
+      setInput(e.target.value)
+    }
+    
   }
 
   return (

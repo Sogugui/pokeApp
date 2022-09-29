@@ -19,7 +19,7 @@ useEffect(() => {
         case "water":{ setBg("bg-sky-600/90"); break } // lapras
         case "fighting":{ setBg("bg-red-800/90"); break } //machamp
         case "rock":{ setBg("bg-orange-800/90"); break } //sudowoodo
-        case "normal":{ setBg("bg-neutral-300/90"); break } // pidgeotto
+        case "normal":{ setBg("bg-neutral-400/90"); break } // pidgeotto
         case "bug":{ setBg("bg-green-500"); break } // caterpie
         case "fairy":{ setBg("bg-pink-300/90"); break } // xerneas
         case "dark":{ setBg("bg-slate-600/90"); break } // umbreon 
@@ -45,27 +45,27 @@ useEffect(() => {
   
   
 return (
-   <div className={`card bg-red-50/70 w-80 h-[27rem]  rounded-xl border-solid border-4  border-secondary/ `}>
+   <div className={`card bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-${bg} `}>
         <div className={'rounded-xl'}>
         <div className={` ${bg} bg-${tipo}  rounded-md h-[6rem]`}>
-            <div className='flex justify-center h-[20vh] select-none'>
-                <img className="h-full"
+            <div className='flex justify-center h-[17vh] select-none relative overflow-hidden bg-no-repeat bg-cover max-w-xs'>
+                <img className="h-full max-w-xs hover:scale-110 transition"
                     src={pokemon.pokemon.image}
                     alt=""/>
             </div>
-            <div id="description" className="space-y-4">
-                <a href="#">
+            <div  className="">
+                <span>
                     <h2 className="text-black text-center font-semibold text-xl transition hover:text-yellow-300">
                         {pokemon.pokemon.name}
                     </h2>
-                </a>
+                </span>
           <div className="flex gap-2 text-black-100 text-sm select-none items-center">
             <span className='text-md font-bold pl-3'>Attacks: </span>
               <p>{pokemon.pokemon.firstMove}</p>
               <p>{pokemon.pokemon.secondMove}</p>
           </div>
-                <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6 pl-3">
-                     <span id="price" className={`text-slate-50 ${bg} bg-${tipo} rounded-md border-solid border-[3px] px-6 p-1 flex justify-between text-center items-center`}>
+                <div className="flex items-center justify-between font-semibold text-sm pl-2">
+                     <span className={`text-slate-50 ${bg} bg-${tipo} rounded-md border-solid border-[3px] px-6 p-1 flex items-center`}>
                          {pokemon.pokemon.type}
                     </span>
                     <span className="text-black-500 flex justify-between items-center select-none pr-3">
