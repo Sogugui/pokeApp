@@ -12,16 +12,30 @@ const Card = (pokemon) => {
 useEffect(() => {   
     
     switch (tipo){
-        case "psychic":{ setBg("bg-violet-500/90"); break }
-        case "grass":{ setBg("bg-emerald-600/90"); break }
-        case "electric":{ setBg("bg-amber-500/90"); break }
-        case "fire":{ setBg("bg-red-500/90"); break }
-        case "water":{ setBg("bg-sky-500/90"); break }
-        case "fighting":{ setBg("bg-slate-400/90"); break }
-        case "rock":{ setBg("bg-stone-400/90"); break }
-        case "normal":{ setBg("bg-orange-300/90"); break }
+        case "psychic":{ setBg("bg-violet-500/90"); break } //mewtwo
+        case "grass":{ setBg("bg-emerald-600/90"); break } // chikorita
+        case "electric":{ setBg("bg-amber-500/90"); break } // pikachu
+        case "fire":{ setBg("bg-red-500/90"); break } //charizard
+        case "water":{ setBg("bg-sky-600/90"); break } // lapras
+        case "fighting":{ setBg("bg-red-800/90"); break } //machamp
+        case "rock":{ setBg("bg-orange-800/90"); break } //sudowoodo
+        case "normal":{ setBg("bg-neutral-300/90"); break } // pidgeotto
+        case "bug":{ setBg("bg-green-500"); break } // caterpie
+        case "fairy":{ setBg("bg-pink-300/90"); break } // xerneas
+        case "dark":{ setBg("bg-slate-600/90"); break } // umbreon 
+        case "dragon":{ setBg("bg-indigo-600/90"); break } //dragonite 
+        case "flying":{ setBg("bg-blue-500/90"); break } // 
+        case "ghost":{ setBg("bg-purple-800/90"); break } // gastly
+        case "ground":{ setBg("bg-yellow-800/90"); break } // dugtrio 
+        case "ice":{ setBg("bg-cyan-200/90"); break } // articuno
+        case "poison":{ setBg("bg-fuchsia-600/90"); break } // muk 
+        case "steel":{ setBg("bg-slate-300/90"); break } // steelix 
+
+
+        
          default:{ break}
     }
+
 
     
 
@@ -31,7 +45,7 @@ useEffect(() => {
   
   
 return (
-   <div className={`card ${bg} bg-purple-600 w-80 h-[27rem] px-6 rounded-xl border-solid border-4 border-secondary/ `}>
+   <div className={`card ${bg} bg-${tipo} w-80 h-[27rem] px-6 rounded-xl border-solid border-4 border-secondary/ `}>
             <div className='flex justify-center h-[20vh] select-none'>
                 <img className="h-full"
                     src={pokemon.pokemon.image}
