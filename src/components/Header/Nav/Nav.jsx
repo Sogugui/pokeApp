@@ -68,7 +68,7 @@ const Nav = () => {
       </div>
 
       {/* PC navigation */}
-      <div className='hidden lg:flex justify-between px-24 py-4 bg-neutral-100 shadow-md items-center select-none'>
+      <div className='hidden lg:flex justify-between px-24 py-4 bg-neutral-100/90 shadow-md items-center select-none'>
         <div className='flex items-center gap-2 text-xl group'>
           <img src={pokeball} alt="img" className='text-xl group-hover:rotate-[-17deg] group-hover:scale-[1.15] duration-500 group-hover:text-yellow-700'/>
           <Link onClick={toggleBar} to="/" className='text-2xl'>

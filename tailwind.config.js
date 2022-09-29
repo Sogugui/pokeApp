@@ -15,7 +15,7 @@ module.exports = {
         'normal': '#7b5a4a'
       },
       backgroundImage: {
-        'pc': "url('https://images.hdqwalls.com/download/pikachu-pokeball-xc-2560x1600.jpg')",
+        'pc': "url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700948269.jpg')",
         'movil': "url('https://i.pinimg.com/564x/bd/80/d2/bd80d286df3ae415c50e20fe61b86373.jpg')"
         
       }
