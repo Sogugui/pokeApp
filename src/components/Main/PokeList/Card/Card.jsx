@@ -45,7 +45,9 @@ useEffect(() => {
   
   
 return (
-   <div className={`card ${bg} bg-${tipo} w-80 h-[27rem] px-6 rounded-xl border-solid border-4 border-secondary/ `}>
+   <div className={`card bg-red-50/70 w-80 h-[27rem]  rounded-xl border-solid border-4  border-secondary/ `}>
+        <div className={'rounded-xl'}>
+        <div className={` ${bg} bg-${tipo}  rounded-md h-[6rem]`}>
             <div className='flex justify-center h-[20vh] select-none'>
                 <img className="h-full"
                     src={pokemon.pokemon.image}
@@ -53,20 +55,20 @@ return (
             </div>
             <div id="description" className="space-y-4">
                 <a href="#">
-                    <h2 className="text-white font-semibold text-xl transition hover:text-yellow-300">
+                    <h2 className="text-black text-center font-semibold text-xl transition hover:text-yellow-300">
                         {pokemon.pokemon.name}
                     </h2>
                 </a>
-          <div className="flex gap-2 text-slate-500 text-sm select-none items-center">
-            <span className='text-md font-bold'>Attacks: </span>
+          <div className="flex gap-2 text-black-100 text-sm select-none items-center">
+            <span className='text-md font-bold pl-3'>Attacks: </span>
               <p>{pokemon.pokemon.firstMove}</p>
               <p>{pokemon.pokemon.secondMove}</p>
           </div>
-                <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
-                     <span id="price" className="text-cyan-300 flex justify-between items-center">
-                        Type: {pokemon.pokemon.type}
+                <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6 pl-3">
+                     <span id="price" className={`text-slate-50 ${bg} bg-${tipo} rounded-md border-solid border-[3px] px-6 p-1 flex justify-between text-center items-center`}>
+                         {pokemon.pokemon.type}
                     </span>
-                    <span className="text-slate-500 flex justify-between items-center select-none">
+                    <span className="text-black-500 flex justify-between items-center select-none pr-3">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd"
                                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
@@ -75,7 +77,8 @@ return (
                         ID: {pokemon.pokemon.id}
                     </span>
                 </div>
-                
+                </div>
+                </div>   
         </div> 
         </div>  
  )
