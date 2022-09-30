@@ -54,6 +54,10 @@ Vista Móvil:
 
 ![pokecreatedmvl](https://user-images.githubusercontent.com/101732872/193168787-18165999-8d5f-44e9-a87f-d297f3511879.jpg).
 
+--Vista detallada de un Pokémon guardado en /list al hacer click en su nombre 
+
+![2](https://user-images.githubusercontent.com/101732872/193175303-384c4797-3267-4862-aa55-ee34f4b1ab2c.gif)
+
 
 
 
