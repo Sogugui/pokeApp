@@ -19,8 +19,8 @@ const Nav = () => {
   return (
     <>
       {/* phone navigation */}
-      <div className='lg:hidden  select-none bg-slate-100'>
-        <div className='flex items-center gap-2 text-xl p-4'>
+      <div className='lg:hidden  select-none bg-slate-100 font-poppins'>
+        <div className='flex items-center gap-2 text-xl p-2'>
           <img src={pokeball} alt="img"/>
           <Link  to="/" className=''>
             <span>Poke</span>{' '}
@@ -59,7 +59,10 @@ const Nav = () => {
             <Link onClick={toggleBar} to="/" className='text-2xl'>Home</Link>
           </div>
           <div className='flex gap-4 w-1/3'>
-            <Link to ="/list" className='text-2xl'>List</Link>
+            <Link onClick={toggleBar} to ="/search" className='text-2xl'>Search</Link>
+          </div>
+          <div className='flex gap-4 w-1/3'>
+            <Link onClick={toggleBar} to ="/" className='text-2xl'>List</Link>
           </div>
           <div className='flex gap-4 w-1/3'>
             <Link onClick={toggleBar} to="/new" className='text-2xl'>Create Pokemon</Link>
@@ -68,23 +71,23 @@ const Nav = () => {
       </div>
 
       {/* PC navigation */}
-      <div className='hidden lg:flex justify-between px-24 py-4 bg-neutral-100/90 shadow-md items-center select-none'>
+      <div className='font-poppins hidden lg:flex justify-between px-24 py-4 bg-neutral-100/90 shadow-md items-center select-none'>
         <div className='flex items-center gap-2 text-xl group'>
-          <img src={pokeball} alt="img" className='text-xl group-hover:rotate-[-17deg] group-hover:scale-[1.05] duration-500 group-hover:text-yellow-700'/>
-          <Link onClick={toggleBar} to="/" className='text-2xl'>
+          <img src={pokeball} alt="img" className=' group-hover:rotate-[-17deg]  group-hover:scale-[1.05] duration-500 group-hover:text-yellow-700'/>
+          <Link  to="/" className='text-2xl'>
             Poke <span className='text-action font-semibold'>App</span>
           </Link>
         </div>
         <div className='flex gap-14 text-xl items-center'>
-          <Link onClick={toggleBar} to="/search" className='flex items-center gap-2 group'>
+          <Link  to="/search" className='flex items-center gap-2 group'>
             <img  src={pokedex} alt="img" className='fa-solid fa-users text-2xl group-hover:rotate-[17deg] scale-0 group-hover:scale-[1.40] duration-500 group-hover:text-green-700 group-hover:-translate-x-1'/>
             <span>Search</span>
           </Link>
-          <Link onClick={toggleBar} to="/" className='flex items-center gap-2 group'>
+          <Link  to="/" className='flex items-center gap-2 group'>
             <img src={pokeballOpen} alt="img" className=' text-2xl group-hover:rotate-[17deg] scale-0 group-hover:scale-[1.05] duration-500 group-hover:text-amber-800 group-hover:-translate-x-1'/>
             <span>List</span>
           </Link>
-          <Link onClick={toggleBar} to="/new" className='flex items-center gap-2 group'>
+          <Link  to="/new" className='flex items-center gap-2 group'>
             <img  src={egg} alt="img" className=' text-2xl group-hover:rotate-[17deg] scale-0 group-hover:scale-[1.05] duration-500 group-hover:text-sky-600 group-hover:-translate-x-1'/>
             <span>Create Pokemon</span>
           </Link>

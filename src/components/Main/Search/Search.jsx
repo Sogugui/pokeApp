@@ -101,7 +101,7 @@ const  Search = () => {
 
 
   const handlerChange = (e) =>{
-    if(e.target.value>199){
+    if(e.target.value>300){
       handlerError(`416 - Request range. Unable to fetch pokemon: ${e.target.value}`)
     }else{
       setInput(e.target.value)
@@ -113,7 +113,10 @@ const  Search = () => {
     <div className='flex flex-col justify-between overflow-auto'> 
       <div className="flex flex-col justify-start items-center gap-4 pt-3">
         <div className='flex flex-col gap-2 items-center'>
-          <input placeholder='Search a pokemon...' onChange={(e)=>handlerChange(e)} value={input} type="text"/>
+          <div className='flex gap-3 items-center'>
+            <input placeholder='Search a pokemon...' onChange={(e)=>handlerChange(e)} value={input} type="text"/>
+            <i className="fa-solid fa-magnifying-glass text-white text-2xl"></i>
+          </div> 
           {
             error 
             ? <p className='bg-red-200 text-red-600 px-3 py-1 rounded-lg'>{msg}</p>
@@ -125,7 +128,7 @@ const  Search = () => {
       <div className=' flex flex-wrap gap-5 px-2 md:px-24 lg:px-36 justify-center pt-5 h-[80vh] overflow-auto'>
         { 
           poke !== ""
-          ? <div className={`card bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-secondary `}>
+          ? <div className={`animate__animated animate__bounceInRight bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-secondary `}>
                   <div className={'rounded-xl'}>
                   <div className={` ${bg} bg-${poke.type}  rounded-md h-[6rem]`}>
                       <div className='flex justify-center h-[17vh] select-none relative overflow-hidden bg-no-repeat bg-cover max-w-xs'>

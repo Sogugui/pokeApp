@@ -27,8 +27,6 @@ const Details = () => {
   const { weight = '' } = queryString.parse(location.search)
   const { ability1 = '' } = queryString.parse(location.search)
   const { ability2= '' } = queryString.parse(location.search)
-  console.log("tipo: ", type)
-  console.log("name: ", name)
 
   const imgSrc1 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
   const imgSrc2 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${id}.gif`
@@ -70,53 +68,74 @@ useEffect(() => {
 
 
 return (
-  <div className='flex justify-center pt-2 px-2 md:px-0 md:pt-10'> {/* padre de todo en DETAILS centrado en pc y responsive */}
-    <div className={`bg-red-50/90 w-[100vw] md:w-[50vw] h-[70vh] md:h-[60vh]  rounded-xl border-solid border-4  border-secondary `}>
-      <div className="bg-blue-400  h-2/5">a</div>
-      <div className="bg-green-400 h-3/5 flex justify-between">
-      <div className='relative h-full w-full'> {/* este div necesita altura y anchura definidas para que swiper se alimente */}
-      <Swiper
-        pagination={true}
-        modules={[Pagination]}
-        className=' bg-white h-full w-full z-0'
-      >
-        <SwiperSlide className='flex bg-red-500'>
-          <div className="h-full w-full flex flex-col items-center justify-evenly bg-gray-200">
-              <p>{firstMove}</p>
-              <p>{secondMove}</p>
-              
-          </div>
-          <div className="h-full w-full flex flex-col items-center justify-evenly bg-orange-200">
+  <div className='animate__animated animate__fadeIn font-poppins flex justify-center pt-2 px-2 md:px-0 md:pt-10 select-none'> {/* padre de todo en DETAILS centrado en pc y responsive */}
+    <div className={`bg-red-50/90 w-[100vw] md:w-[50vw] h-[70vh] md:h-[55vh]  rounded-md border-solid border-4 `}>
+      <div className={`${bg} h-2/5 text-white flex flex-col relative justify-between items-center rounded-md`}>
+      <div className='flex justify-center h-[17vh] select-none overflow-hidden'>
+          <img className="h-full max-w-xs hover:scale-110 transition"
+            src={imgSrc1}
+            alt=""
+          />
+          <img className="h-full max-w-xs hover:scale-110 transition"
+            src={imgSrc2}
+            alt=""
+          />
+        </div>
+        <div className='absolute bottom-0 translate-y-5 z-10 w-full flex justify-center'>
+          <span className='font-semibold text-2xl text-black bg-gray-100  hover:-rotate-[9deg] px-3 py-2 rounded-md tracking-widest uppercase'>{name}</span>
+        </div>
+      </div>
+
+      <div className="rounded-md h-3/5 flex justify-between">
+        <div className='relative h-full w-full'> {/* este div necesita altura y anchura definidas para que swiper se alimente */}
+        <Swiper
+          pagination={true}
+          modules={[Pagination]}
+          className=' bg-white h-full w-full z-0'
+        >
+        <SwiperSlide className='flex '>
+          <div className="h-full w-full flex flex-col items-center justify-evenly">
               <div className="flex gap-1 items-center">
-                <img className="max-h-10" src="https://img.icons8.com/fluency/48/000000/sword.png"/>
-                <p className="text-xl">{thirdMove}</p>
+                <img className="max-h-10" src="https://img.icons8.com/fluency/344/pokeball.png"/>
+                <p className={`${bg} text-white rounded-md px-2 py-1 text-xl`}>{type}</p>
               </div>
-              <p>{fourthMove}</p>              
+              <div className="flex gap-1 items-center">
+                <img className="max-h-10" src="https://img.icons8.com/cotton/344/security-pass.png"/>
+                <p className="text-xl">{id} - ID</p>
+              </div>
+          </div>
+          <div className="h-full w-full flex flex-col items-center justify-evenly">
+              <div className="flex gap-1 items-center">
+                <img className="max-h-10" src="https://img.icons8.com/plasticine/452/stationery.png"/>
+                <p className="text-xl">{height}0cm</p>
+              </div>
+              <div className="flex gap-1 items-center">
+                <img className="max-h-10" src="https://img.icons8.com/fluency/452/industrial-scales.png"/>
+                <p className="text-xl">{weight}kg!</p>
+              </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-amber-500'>
-          Slide 2
-        </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-blue-500'>
-          Slide 3
-        </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-gray-500'>
-          Slide 4
-        </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-green-500'>
-          Slide 5
-        </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-red-500'>
-          Slide 6
-        </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-red-500'>
-          Slide 7
-        </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-red-500'>
-          Slide 8
-        </SwiperSlide>
-        <SwiperSlide className='flex items-center justify-center bg-red-500'>
-          Slide 9
+        <SwiperSlide className='flex '>
+          <div className="h-full w-full flex flex-col items-center justify-evenly">
+            <div className="flex gap-1 items-center">
+                  <img className="max-h-10" src="https://img.icons8.com/fluency/48/000000/sword.png"/>
+                  <p className="text-xl">{firstMove}</p>
+            </div>
+            <div className="flex gap-1 items-center">
+                <img className="max-h-10" src="https://img.icons8.com/emoji/344/star-emoji.png"/>
+                <p className="text-xl">{secondMove}</p>
+            </div>  
+          </div>
+            <div className="h-full w-full flex flex-col items-center justify-evenly">
+              <div className="flex gap-1 items-center">
+                <img className="max-h-10" src="https://img.icons8.com/external-wanicon-flat-wanicon/344/external-posion-halloween-wanicon-flat-wanicon.png"/>
+                <p className="text-xl">{thirdMove}</p>
+            </div>
+            <div className="flex gap-1 items-center">
+                <img className="max-h-10" src="https://img.icons8.com/stickers/344/shield.png"/>
+                <p className="text-xl">{fourthMove}</p>
+            </div>
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>
