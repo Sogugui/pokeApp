@@ -16,8 +16,7 @@ const Card = (pokemon) => {
     const weight= pokemon.pokemon.weight
     const height = pokemon.pokemon.height
     const experience= pokemon.pokemon.experience
-    const ability1= pokemon.pokemon.ability1
-    const ability2= pokemon.pokemon.ability2
+
 
     
     // const secondMove = pokemon.pokemon.moves[1].move.name
@@ -67,8 +66,6 @@ name=${name}
 &secondMove=${secondMove}
 &thirdMove=${thirdMove}
 &fourthMove=${fourthMove}
-&ability1=${ability1}
-&ability2=${ability2}
 &experience=${experience}
 &weight=${weight}
 &height=${height}`} className={`card bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-secondary `}>

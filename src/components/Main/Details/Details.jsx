@@ -25,8 +25,7 @@ const Details = () => {
   const { experience = '' } = queryString.parse(location.search)
   const { height = '' } = queryString.parse(location.search)
   const { weight = '' } = queryString.parse(location.search)
-  const { ability1 = '' } = queryString.parse(location.search)
-  const { ability2= '' } = queryString.parse(location.search)
+
 
   const imgSrc1 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
   const imgSrc2 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${id}.gif`

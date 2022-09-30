@@ -76,9 +76,7 @@ const  Search = () => {
         fourthMove: data.moves[3].move.name,
         weight: data.weight,
         height: data.height,
-        experience: data.base_experience,
-        ability1: data.abilities[0].ability.name,
-        ability2: data.abilities[1].ability.name
+        experience: data.base_experience
 
       }
 
