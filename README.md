@@ -1,70 +1,61 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [**Link to Poke App**](https://scintillating-bubblegum-2eba51.netlify.app/)
 
-## Available Scripts
+Aplicación de búsqueda de Pokémons a modo de "Pokédex" desarrollada con React funcional en la que se plantearon para su desarrollo las siguientes directrices: 
+Se realizaran las búsquedas solas en función de lo que escriba el usuario.
 
-In the project directory, you can run:
+Cuando escribamos, la petición deberá realizarse según escribimos (uso de Debounce)
 
-### `npm start`
+Cuando escribamos un pokemon en el input que ya exista en nuestra lista de pokemons, no se realizará la petición.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Routing:
+/. La página principal, donde veamos el listado de pokemons.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+/new La página de creación de nuevo pokemon con un formulario para ingresar sus datos.
 
-### `npm test`
+/pokemon/:id La página de visualización de un perfil de pokemon (información extendida). Necesitarás el componente Details.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+/search Página de búsqueda de un pokemon en la PokeApp. (Ya la tenemos hecha de ejercicios anteriores).
 
-### `npm run build`
+Formulario para creación de un nuevo pokémon.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Comunicación:
+El estado con el listado de Pokemon debe vivir en App y pasarse a cada sección que lo necesite consumiendolo a través de Context
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+El componente ListaPokemon, recibirá de Context la lista de Pokémons y mapeará dicha lista cargando los componentes Card correspondientes y pasándole a través de props la información de cada registro.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Los nombres mostrados por los componentes Card de cada Pokémon serán Links clickables que llevarán a la ruta /pokemon/:id, que mostrará la vista detallada de ese Pokemon. En dicho Link se pasará en la query String los datos del Pokemon para poder ser leídos en la pantalla de vista detalle(puedes usar un hook para ello si quieres).
 
-### `npm run eject`
+**Funcionamiento de la App**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+En la ruta /search podremos hacer la búsqueda de Pokémons por nombre o por id.Estos se irán guardando en /list a modo de "favoritos".
+Si queremos buscar un Pokémon que ya buscamos previamente aparecerá un mensaje de error y no se podrá hacer la petición. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![1 2362](https://user-images.githubusercontent.com/101732872/193168075-551bdcb2-fbb3-4a67-9534-b3e4e16d1151.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---Creación de un nuevo Pokémon 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Vista Pc: 
 
-## Learn More
+![createPok](https://user-images.githubusercontent.com/101732872/193168439-f634d511-a01a-44f9-a98d-bcd2363bbe91.jpg)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Vista Móvil: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![createPok mvljpg](https://user-images.githubusercontent.com/101732872/193168607-79952532-10af-47bc-9d01-c2ce270e5072.jpg)
 
-### Code Splitting
+--Nuevo Pokémon creado y guardado en /list:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Vista Pc:
 
-### Analyzing the Bundle Size
+![pokecreated](https://user-images.githubusercontent.com/101732872/193168747-dbd12407-65a4-4489-ab71-e9a60bfc069e.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Vista Móvil: 
 
-### Making a Progressive Web App
+![pokecreatedmvl](https://user-images.githubusercontent.com/101732872/193168787-18165999-8d5f-44e9-a87f-d297f3511879.jpg).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
