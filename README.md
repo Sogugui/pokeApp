@@ -56,7 +56,15 @@ Vista Móvil:
 
 --Vista detallada de un Pokémon guardado en /list al hacer click en su nombre 
 
+Vista Pc:
+
 ![2](https://user-images.githubusercontent.com/101732872/193175303-384c4797-3267-4862-aa55-ee34f4b1ab2c.gif)
+
+Vista Móvil: 
+
+![3](https://user-images.githubusercontent.com/101732872/193176187-a79067fb-e3c6-4c8d-a48e-fe6a9db5eca0.gif)
+
+
 
 
 
