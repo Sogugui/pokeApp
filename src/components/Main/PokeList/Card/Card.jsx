@@ -71,11 +71,7 @@ name=${name}
 &ability2=${ability2}
 &experience=${experience}
 &weight=${weight}
-&height=${height}
-
-
-
-`} className={`card bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-secondary `}>
+&height=${height}`} className={`card bg-red-50/90 w-80 h-[30vh]  rounded-xl border-solid border-4  border-secondary `}>
         <div className={'rounded-xl'}>
         <div className={` ${bg} bg-${tipo}  rounded-md h-[6rem]`}>
             <div className='flex justify-center h-[17vh] select-none relative overflow-hidden bg-no-repeat bg-cover max-w-xs'>

@@ -2,6 +2,14 @@ import React,{useEffect, useState} from 'react'
 import { useParams, useLocation} from 'react-router-dom'
 import queryString from 'query-string'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+// import required modules
+import { Pagination } from 'swiper'
 
 const Details = () => {
   const [bg, setBg] = useState('')
@@ -62,30 +70,59 @@ useEffect(() => {
 
 
 return (
-<div className='flex justify-center pt-2 px-2 md:px-0 md:pt-10'> {/* padre de todo en DETAILS centrado en pc y responsive */}
-  <div className={`bg-red-50/90 w-[100vw] md:w-[50vw] h-[70vh] md:h-[70vh]  rounded-xl border-solid border-4  border-secondary `}>
-    <div className={'rounded-xl'}>
-      <div className={` ${bg} bg-${type}  rounded-md h-[6rem]`}>
-          <div className='flex justify-center h-[17vh] select-none overflow-hidden'>
-              <img className="h-full max-w-xs hover:scale-110 transition"
-                  src={imgSrc1}
-                  alt=""
-                />
-              <img className="h-full max-w-xs hover:scale-110 transition"
-                  src={imgSrc2}
-                  alt=""
-              />
+  <div className='flex justify-center pt-2 px-2 md:px-0 md:pt-10'> {/* padre de todo en DETAILS centrado en pc y responsive */}
+    <div className={`bg-red-50/90 w-[100vw] md:w-[50vw] h-[70vh] md:h-[60vh]  rounded-xl border-solid border-4  border-secondary `}>
+      <div className="bg-blue-400  h-2/5">a</div>
+      <div className="bg-green-400 h-3/5 flex justify-between">
+      <div className='relative h-full w-full'> {/* este div necesita altura y anchura definidas para que swiper se alimente */}
+      <Swiper
+        pagination={true}
+        modules={[Pagination]}
+        className=' bg-white h-full w-full z-0'
+      >
+        <SwiperSlide className='flex bg-red-500'>
+          <div className="h-full w-full flex flex-col items-center justify-evenly bg-gray-200">
+              <p>{firstMove}</p>
+              <p>{secondMove}</p>
+              
           </div>
-          <div  className="">
-              <h2 className="text-black text-center font-semibold text-xl transition hover:text-yellow-300">
-                      {name}
-              </h2>
+          <div className="h-full w-full flex flex-col items-center justify-evenly bg-orange-200">
+              <div className="flex gap-1 items-center">
+                <img className="max-h-10" src="https://img.icons8.com/fluency/48/000000/sword.png"/>
+                <p className="text-xl">{thirdMove}</p>
+              </div>
+              <p>{fourthMove}</p>              
           </div>
-          <div className="bg-blue-400 h-full w-full">testing</div>
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-amber-500'>
+          Slide 2
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-blue-500'>
+          Slide 3
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-gray-500'>
+          Slide 4
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-green-500'>
+          Slide 5
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-red-500'>
+          Slide 6
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-red-500'>
+          Slide 7
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-red-500'>
+          Slide 8
+        </SwiperSlide>
+        <SwiperSlide className='flex items-center justify-center bg-red-500'>
+          Slide 9
+        </SwiperSlide>
+      </Swiper>
+    </div>
       </div>
-    </div>   
-  </div> 
-</div>
+    </div>
+  </div>
       
 )
 }
