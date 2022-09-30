@@ -2,6 +2,7 @@
 # [**Link to Poke App**](https://scintillating-bubblegum-2eba51.netlify.app/)
 
 Aplicación de búsqueda de Pokémons a modo de "Pokédex" desarrollada con React funcional en la que se plantearon para su desarrollo las siguientes directrices: 
+
 Se realizaran las búsquedas solas en función de lo que escriba el usuario.
 
 Cuando escribamos, la petición deberá realizarse según escribimos (uso de Debounce)
