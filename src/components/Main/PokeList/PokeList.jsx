@@ -12,7 +12,11 @@ const PokeList = () => {
         { 
           pokemons.length !== 0 
           ? pokemons.map((poke, index)=> <Card pokemon={poke} key={index} />)  
-          : ""
+          : <div>
+            <h1 className='text-amber-400/90 text-center font-semibold text-2xl'>Welcome!</h1>
+            <p className='text-neutral-400/90 text-center font-semibold text-xl'>You can search Pokemons in Search section</p>
+            <p className='text-neutral-400/90 text-center font-semibold text-xl'>Example: Pikachu, Muk, Lapras</p>
+          </div>
         }
       </div>    
   )

@@ -22,7 +22,6 @@ const Details = () => {
   const { secondMove = '' } = queryString.parse(location.search)
   const { thirdMove = '' } = queryString.parse(location.search)
   const { fourthMove = '' } = queryString.parse(location.search)
-  const { experience = '' } = queryString.parse(location.search)
   const { height = '' } = queryString.parse(location.search)
   const { weight = '' } = queryString.parse(location.search)
 

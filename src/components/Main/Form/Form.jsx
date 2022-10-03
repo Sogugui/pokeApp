@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { useForm } from 'react-hook-form';
 import { pokeContext } from "../../../context/pokeContext";
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -19,9 +20,16 @@ const Form = () => {
     setPokemons([...pokemons,data])
   }
 
+  const navigate = useNavigate();
+
+  const navigateHome = () => {
+    // navigate to /
+    navigate('/');
+  };
+
   return (
     <div className={"flex items-center content-around justify-center"}>
-    <form onSubmit={handleSubmit( data=> sendContext(data))}  className={"flex justify-center content-around  flex-col w-80 px-10 py-10 items-center gap-3"}>
+    <form onSubmit={handleSubmit( data=> sendContext(data) & navigateHome())}  className={"flex justify-center content-around  flex-col w-80 px-10 py-10 items-center gap-3"}>
       <h2 className=" text-slate-50 text-md font-bold">Create your own Pokémon</h2>
       <input  className="w-full px-4 py-2 bg-white hover:bg-gray-200" {...register("id")} label="Id" type="number" name="id" placeholder="id" required  />
       <input  className="w-full px-4 py-2 bg-white hover:bg-gray-200" {...register("name")} type="text" label="Name" name="name" placeholder="Name" required minlenght="3"  />
@@ -49,8 +57,10 @@ const Form = () => {
         <option value="poison">Poison</option>
         <option value="steel">Steel</option>
       </select>
-      <button className="w-full px-2 py-1 bg-amber-400/90 text-slate-100 rounded-lg" type="submit">Create</button>
+      <button  className="w-full px-2 py-1 bg-amber-400/90 text-slate-100 rounded-lg" type="submit">Create</button>
+     
     </form>
+
     </div>
   );
 }
